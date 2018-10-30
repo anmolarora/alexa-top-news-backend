@@ -1,2 +1,4 @@
-# alexa-top-news-backend
-Backend for "Top news feed used in Alexa Skill"
+Backend for "Breaking news - Alexa Skill"
+
+Thanks to:
+https://newsapi.org
