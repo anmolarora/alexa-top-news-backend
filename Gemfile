@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 # For formatted printing anywhere
 gem 'awesome_print'
+# For env variables
+gem 'figaro'
 # For Http calls
 gem 'httparty'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

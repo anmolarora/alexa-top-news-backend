@@ -50,3 +50,6 @@ node_modules/
 # Ignore zeus files
 zeus.json
 custom_plan.rb
+
+# Ignore file with ENV variables defined
+config/application.yml
