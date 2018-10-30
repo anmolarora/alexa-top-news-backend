@@ -21,6 +21,27 @@ class BreakingNewsFetcher
   private
 
   def top_headlines
-    self.class.get('/v2/top-headlines', @options)
+    response = self.class.get('/v2/top-headlines', @options)
+    format_response_for_skill(response.parsed_response)
+  end
+
+  # Format response for Alexa skill
+  def format_response_for_skill(raw_response)
+    articles = raw_response.fetch('articles', [])
+    formatted_articles = []
+    articles.each do |article|
+      formatted_articles << format_article(article)
+    end
+    formatted_articles
+  end
+
+  def format_article(raw_article)
+    {
+      uid: SecureRandom.uuid,
+      updateDate: raw_article.fetch('publishedAt'),
+      titleText: raw_article.fetch('title'),
+      mainText: raw_article.fetch('title'),
+      redirectionUrl: raw_article.fetch('url')
+    }
   end
 end
