@@ -2,6 +2,6 @@
 
 class AlexaSkillHeadlinesController < ApplicationController
   def top_headlines
-    render json: BreakingNewsFetcher.call
+    render json: BreakingNewsFetcher.call(params[:country])
   end
 end

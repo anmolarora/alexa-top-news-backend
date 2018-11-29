@@ -9,9 +9,10 @@ class BreakingNewsFetcher
   # 'in' for India
   DEFAULT_COUNTRY = 'in'
 
-  def initialize
-    @options = { query: { country: DEFAULT_COUNTRY,
-                 apiKey: ENV['NEWAPI_ORG_API_KEY'] } }
+  def initialize(country)
+    country ||= DEFAULT_COUNTRY
+    @options = { query: { country: country,
+                          apiKey: ENV['NEWAPI_ORG_API_KEY'] } }
   end
 
   def call
